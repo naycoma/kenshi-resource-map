@@ -7,6 +7,7 @@
   "areas": {
     "255,255,0": {
       "biome": "The Desert",
+      "biomeJa": null,
       "biomeId": "18001-gamedata.base",
       "profile": null,
       "iron": 0.0,
@@ -47,6 +48,7 @@
     },
     "0,0,0": {
       "biome": "NONE",
+      "biomeJa": "なし",
       "biomeId": "18003-gamedata.base",
       "profile": "None",
       "iron": 0.033333,
@@ -85,6 +87,7 @@
     },
     "255,255,80": {
       "biome": "Desert",
+      "biomeJa": "砂漠",
       "biomeId": "44956-Newwworld.mod",
       "profile": null,
       "iron": 0.0,
@@ -125,6 +128,7 @@
     },
     "255,128,128": {
       "biome": "The Swamp",
+      "biomeJa": "スワンプ",
       "biomeId": "48447-Newwworld.mod",
       "profile": "swamp",
       "iron": 0.333333,
@@ -163,6 +167,7 @@
     },
     "75,108,118": {
       "biome": "Ashlands",
+      "biomeJa": "アッシュランド",
       "biomeId": "48462-Newwworld.mod",
       "profile": "ashland",
       "iron": 1.0,
@@ -204,6 +209,7 @@
     },
     "0,100,50": {
       "biome": "Skimsands",
+      "biomeJa": "スキムサンド",
       "biomeId": "56111-rebirth.mod",
       "profile": "Desert",
       "iron": 0.333333,
@@ -244,6 +250,7 @@
     },
     "100,100,255": {
       "biome": "Deadlands",
+      "biomeJa": "デッドランド",
       "biomeId": "48456-Newwworld.mod",
       "profile": "polluted",
       "iron": 0.333333,
@@ -284,6 +291,7 @@
     },
     "50,100,100": {
       "biome": "Stobe's Gamble",
+      "biomeJa": "ストーブギャンブル",
       "biomeId": "48678-Newwworld.mod",
       "profile": "no food",
       "iron": 0.333333,
@@ -324,6 +332,7 @@
     },
     "25,0,121": {
       "biome": "Skinner's Roam",
+      "biomeJa": "スキナーズローム",
       "biomeId": "44871-Newwworld.mod",
       "profile": "dry arid borderlands",
       "iron": 0.333333,
@@ -364,6 +373,7 @@
     },
     "125,100,80": {
       "biome": "Shem",
+      "biomeJa": "シェム",
       "biomeId": "55938-rebirth.mod",
       "profile": "arid- low altitudes",
       "iron": 0.333333,
@@ -402,6 +412,7 @@
     },
     "50,50,100": {
       "biome": "The Iron Trail",
+      "biomeJa": "アイアントレイル",
       "biomeId": "42255-rebirth.mod",
       "profile": "coast",
       "iron": 0.333333,
@@ -442,6 +453,7 @@
     },
     "0,210,140": {
       "biome": "Arm of Okran",
+      "biomeJa": "アーム・オブ・オクラン",
       "biomeId": "50248-rebirth.mod",
       "profile": "fertile holy",
       "iron": 0.333333,
@@ -480,6 +492,7 @@
     },
     "70,210,140": {
       "biome": "Rebirth",
+      "biomeJa": "リバース",
       "biomeId": "49388-rebirth.mod",
       "profile": null,
       "iron": 0.0,
@@ -518,6 +531,7 @@
     },
     "90,180,255": {
       "biome": "Floodlands",
+      "biomeJa": "フラッドランド",
       "biomeId": "42084-rebirth.mod",
       "profile": "polluted",
       "iron": 0.333333,
@@ -556,6 +570,7 @@
     },
     "255,100,0": {
       "biome": "Okran's Gulf",
+      "biomeJa": "オクラン・ガルフ",
       "biomeId": "18006-rebirth.mod",
       "profile": "arid- borderlands, high canyons",
       "iron": 0.333333,
@@ -594,6 +609,7 @@
     },
     "155,20,0": {
       "biome": "Wend",
+      "biomeJa": "ウェンド",
       "biomeId": "49383-rebirth.mod",
       "profile": null,
       "iron": 0.0,
@@ -632,6 +648,7 @@
     },
     "128,0,255": {
       "biome": "Northern Coast",
+      "biomeJa": "ノーザンコースト",
       "biomeId": "48746-rebirth.mod",
       "profile": "coast",
       "iron": 0.333333,
@@ -672,6 +689,7 @@
     },
     "230,250,190": {
       "biome": "Okran's Valley",
+      "biomeJa": "オクラン・バレー",
       "biomeId": "43922-rebirth.mod",
       "profile": "Desert",
       "iron": 0.333333,
@@ -710,6 +728,7 @@
     },
     "195,195,195": {
       "biome": "Cannibal Plains",
+      "biomeJa": "カニバル・プレーン",
       "biomeId": "42254-rebirth.mod",
       "profile": "coast",
       "iron": 0.333333,
@@ -750,6 +769,7 @@
     },
     "170,180,140": {
       "biome": "Iron Valleys",
+      "biomeJa": "アイアンバレー",
       "biomeId": "42099-rebirth.mod",
       "profile": "polluted",
       "iron": 0.333333,
@@ -790,6 +810,7 @@
     },
     "120,100,85": {
       "biome": "Okran's Pride",
+      "biomeJa": "オクラン・プライド",
       "biomeId": "18876-rebirth.mod",
       "profile": "fertile holy",
       "iron": 0.333333,
@@ -828,6 +849,7 @@
     },
     "100,50,100": {
       "biome": "Dreg",
+      "biomeJa": "ドレッグ",
       "biomeId": "42094-rebirth.mod",
       "profile": "shitty water nofarm",
       "iron": 0.166667,
@@ -868,6 +890,7 @@
     },
     "85,100,30": {
       "biome": "Purple Sands",
+      "biomeJa": "パープルサンド",
       "biomeId": "48744-rebirth.mod",
       "profile": "None",
       "iron": 0.033333,
@@ -908,6 +931,7 @@
     },
     "190,140,190": {
       "biome": "Obedience",
+      "biomeJa": "オビディエンス",
       "biomeId": "42091-rebirth.mod",
       "profile": "polluted",
       "iron": 0.333333,
@@ -946,6 +970,7 @@
     },
     "130,160,100": {
       "biome": "The Shrieking Forest",
+      "biomeJa": "シュリ―キング・フォレスト",
       "biomeId": "42252-rebirth.mod",
       "profile": "fertile holy",
       "iron": 0.333333,
@@ -986,6 +1011,7 @@
     },
     "0,152,255": {
       "biome": "Berserker Country",
+      "biomeJa": "バーサーカー・カントリー",
       "biomeId": "42256-rebirth.mod",
       "profile": null,
       "iron": 0.0,
@@ -1024,6 +1050,7 @@
     },
     "130,160,110": {
       "biome": "Empire",
+      "biomeJa": "帝国",
       "biomeId": "42238-rebirth.mod",
       "profile": "fertile holy",
       "iron": 0.333333,
@@ -1062,6 +1089,7 @@
     },
     "0,255,255": {
       "biome": "Vain",
+      "biomeJa": "ヴェイン",
       "biomeId": "42192-rebirth.mod",
       "profile": "vain",
       "iron": 0.333333,
@@ -1100,6 +1128,7 @@
     },
     "190,100,80": {
       "biome": "Leviathan Coast",
+      "biomeJa": "リバイアサン・コースト",
       "biomeId": "48745-rebirth.mod",
       "profile": "coast",
       "iron": 0.333333,
@@ -1140,6 +1169,7 @@
     },
     "255,0,0": {
       "biome": "Border Zone",
+      "biomeJa": "ボーダーゾーン",
       "biomeId": "42262-rebirth.mod",
       "profile": "arid- borderlands, high canyons",
       "iron": 0.333333,
@@ -1180,6 +1210,7 @@
     },
     "125,100,125": {
       "biome": "Hidden Forest",
+      "biomeJa": "ヒドゥン・フォレスト",
       "biomeId": "48748-rebirth.mod",
       "profile": "fertile holy",
       "iron": 0.333333,
@@ -1218,6 +1249,7 @@
     },
     "0,255,0": {
       "biome": "Fog Islands",
+      "biomeJa": "フォグ・アイランド",
       "biomeId": "18890-rebirth.mod",
       "profile": "cower",
       "iron": 0.333333,
@@ -1256,6 +1288,7 @@
     },
     "100,200,100": {
       "biome": "Raptor Island",
+      "biomeJa": "ラプターアイランド",
       "biomeId": "50982-rebirth.mod",
       "profile": "arid- borderlands, high canyons",
       "iron": 0.333333,
@@ -1296,6 +1329,7 @@
     },
     "32,64,128": {
       "biome": "Stenn Desert",
+      "biomeJa": "ステンデザート",
       "biomeId": "51287-rebirth.mod",
       "profile": "Desert",
       "iron": 0.333333,
@@ -1336,6 +1370,7 @@
     },
     "64,64,128": {
       "biome": "Arach",
+      "biomeJa": "アラック",
       "biomeId": "51326-rebirth.mod",
       "profile": "polluted",
       "iron": 0.333333,
@@ -1374,6 +1409,7 @@
     },
     "4,44,44": {
       "biome": "Shun",
+      "biomeJa": "シュン",
       "biomeId": "51334-rebirth.mod",
       "profile": "arid- low altitudes",
       "iron": 0.333333,
@@ -1414,6 +1450,7 @@
     },
     "90,156,0": {
       "biome": "Spider Plains",
+      "biomeJa": "スパイダープレーン",
       "biomeId": "51359-rebirth.mod",
       "profile": "dry arid borderlands",
       "iron": 0.333333,
@@ -1454,6 +1491,7 @@
     },
     "0,0,255": {
       "biome": "The Crater",
+      "biomeJa": "クレーター",
       "biomeId": "51363-rebirth.mod",
       "profile": "polluted",
       "iron": 0.333333,
@@ -1492,6 +1530,7 @@
     },
     "255,42,128": {
       "biome": "The Grid",
+      "biomeJa": "グリッド",
       "biomeId": "51379-rebirth.mod",
       "profile": "polluted",
       "iron": 0.333333,
@@ -1530,6 +1569,7 @@
     },
     "90,90,180": {
       "biome": "South Wetlands",
+      "biomeJa": "サウス・ウェットランド",
       "biomeId": "51380-rebirth.mod",
       "profile": "swamp",
       "iron": 0.333333,
@@ -1568,6 +1608,7 @@
     },
     "162,80,162": {
       "biome": "Watcher's Rim",
+      "biomeJa": "ウォッチャーズリム",
       "biomeId": "51386-rebirth.mod",
       "profile": "crappy half values- no food",
       "iron": 0.166667,
@@ -1606,6 +1647,7 @@
     },
     "4,156,0": {
       "biome": "The Hook",
+      "biomeJa": "フック",
       "biomeId": "51654-rebirth.mod",
       "profile": "arid- low altitudes",
       "iron": 0.333333,
@@ -1646,6 +1688,7 @@
     },
     "200,100,0": {
       "biome": "The Great Desert",
+      "biomeJa": "グレート・デザート",
       "biomeId": "55621-rebirth.mod",
       "profile": "Desert",
       "iron": 0.333333,
@@ -1686,6 +1729,7 @@
     },
     "10,160,100": {
       "biome": "Burning Forest",
+      "biomeJa": "バーニング・フォレスト",
       "biomeId": "55636-rebirth.mod",
       "profile": "swamp",
       "iron": 0.333333,
@@ -1727,6 +1771,7 @@
     },
     "4,147,133": {
       "biome": "The Black Desert",
+      "biomeJa": "ブラック・デザート",
       "biomeId": "55641-rebirth.mod",
       "profile": "black desert",
       "iron": 0.666667,
@@ -1767,6 +1812,7 @@
     },
     "255,80,45": {
       "biome": "Heng",
+      "biomeJa": "ヘング",
       "biomeId": "55648-rebirth.mod",
       "profile": "Desert",
       "iron": 0.333333,
@@ -1807,6 +1853,7 @@
     },
     "101,133,255": {
       "biome": "Darkfinger",
+      "biomeJa": "ダークフィンガー",
       "biomeId": "55659-rebirth.mod",
       "profile": "rich arid",
       "iron": 0.5,
@@ -1847,6 +1894,7 @@
     },
     "0,30,140": {
       "biome": "Bast",
+      "biomeJa": "バスト",
       "biomeId": "55664-rebirth.mod",
       "profile": "arid- borderlands, high canyons",
       "iron": 0.333333,
@@ -1887,6 +1935,7 @@
     },
     "150,200,50": {
       "biome": "The Eye",
+      "biomeJa": "ジ・アイ",
       "biomeId": "55667-rebirth.mod",
       "profile": "Desert",
       "iron": 0.333333,
@@ -1925,6 +1974,7 @@
     },
     "29,200,182": {
       "biome": "Gut",
+      "biomeJa": "ガット",
       "biomeId": "55674-rebirth.mod",
       "profile": "coast",
       "iron": 0.333333,
@@ -1963,6 +2013,7 @@
     },
     "100,50,0": {
       "biome": "Venge",
+      "biomeJa": "ヴェンジ",
       "biomeId": "55678-rebirth.mod",
       "profile": "arid- low altitudes",
       "iron": 0.333333,
@@ -2003,6 +2054,7 @@
     },
     "90,118,75": {
       "biome": "Sonorous Dark",
+      "biomeJa": "ソノラスダーク",
       "biomeId": "55939-rebirth.mod",
       "profile": "the pits- rich but no food",
       "iron": 0.666667,
@@ -2043,6 +2095,7 @@
     },
     "255,160,0": {
       "biome": "Bonefields",
+      "biomeJa": "ボーンフィールド",
       "biomeId": "56099-rebirth.mod",
       "profile": "bonefields",
       "iron": 0.366667,
@@ -2083,6 +2136,7 @@
     },
     "60,120,120": {
       "biome": "Howler Maze",
+      "biomeJa": "ハウラー・メーズ",
       "biomeId": "56110-rebirth.mod",
       "profile": "coast",
       "iron": 0.333333,
@@ -2123,6 +2177,7 @@
     },
     "50,153,153": {
       "biome": "NONE",
+      "biomeJa": "なし",
       "biomeId": "56123-rebirth.mod",
       "profile": "coast",
       "iron": 0.333333,
@@ -2163,6 +2218,7 @@
     },
     "200,50,200": {
       "biome": "Greenbeach",
+      "biomeJa": "グリーンビーチ",
       "biomeId": "57287-rebirth.mod",
       "profile": "coast",
       "iron": 0.333333,
@@ -2203,6 +2259,7 @@
     },
     "205,220,109": {
       "biome": "Royal Valley",
+      "biomeJa": "ロイヤルバレー",
       "biomeId": "57724-rebirth.mod",
       "profile": "crappy half values w/food",
       "iron": 0.166667,
@@ -2243,6 +2300,7 @@
     },
     "105,220,109": {
       "biome": "Greyshelf",
+      "biomeJa": "グレイシェルフ",
       "biomeId": "57725-rebirth.mod",
       "profile": "crappy half values- no food",
       "iron": 0.166667,
@@ -2283,6 +2341,7 @@
     },
     "230,250,170": {
       "biome": "Stobe's Garden",
+      "biomeJa": "ストーブガーデン",
       "biomeId": "57726-rebirth.mod",
       "profile": "bonefields",
       "iron": 0.366667,
@@ -2321,6 +2380,7 @@
     },
     "130,194,94": {
       "biome": "The Pits East",
+      "biomeJa": "ザ・ピット (東)",
       "biomeId": "57727-rebirth.mod",
       "profile": "the pits- rich but no food",
       "iron": 0.666667,
@@ -2362,6 +2422,7 @@
     },
     "90,80,20": {
       "biome": "Stormgap Coast",
+      "biomeJa": "ストームギャップ・コースト",
       "biomeId": "62169-rebirth.mod",
       "profile": "coast",
       "iron": 0.333333,
@@ -2402,6 +2463,7 @@
     },
     "50,50,50": {
       "biome": "The Outlands",
+      "biomeJa": "アウトランド",
       "biomeId": "62170-rebirth.mod",
       "profile": "dry arid borderlands",
       "iron": 0.333333,
@@ -2440,6 +2502,7 @@
     },
     "150,100,200": {
       "biome": "The Unwanted Zone",
+      "biomeJa": "アンウォンテッド・ゾーン",
       "biomeId": "62171-rebirth.mod",
       "profile": "crappy half values w/food",
       "iron": 0.166667,
@@ -2480,6 +2543,7 @@
     },
     "110,90,70": {
       "biome": "Forbidden Isle",
+      "biomeJa": "フォアビドン・アイル",
       "biomeId": "62172-rebirth.mod",
       "profile": "coast",
       "iron": 0.333333,
@@ -2520,6 +2584,7 @@
     },
     "125,100,0": {
       "biome": "Flats Lagoon",
+      "biomeJa": "フラットラグーン",
       "biomeId": "62382-rebirth.mod",
       "profile": "crappy half values w/food dry",
       "iron": 0.166667,
@@ -2558,6 +2623,7 @@
     },
     "255,32,128": {
       "biome": "Sinkuun",
+      "biomeJa": "シンク―ン",
       "biomeId": "62834-rebirth.mod",
       "profile": "dry arid borderlands",
       "iron": 0.333333,
@@ -2596,6 +2662,7 @@
     },
     "130,20,0": {
       "biome": "Spine Canyon",
+      "biomeJa": "スパインキャニオン",
       "biomeId": "63748-rebirth.mod",
       "profile": "dry arid borderlands",
       "iron": 0.333333,
@@ -2636,6 +2703,7 @@
     },
     "99,9,199": {
       "biome": "Grey Desert",
+      "biomeJa": "グレイ・デザート",
       "biomeId": "64810-rebirth.mod",
       "profile": "Desert polluted",
       "iron": 0.333333,
@@ -2674,6 +2742,7 @@
     },
     "44,194,94": {
       "biome": "The Crags",
+      "biomeJa": "クラッグ",
       "biomeId": "65822-rebirth.mod",
       "profile": "the pits- rich but no food",
       "iron": 0.666667,
@@ -2715,6 +2784,7 @@
     },
     "222,0,0": {
       "biome": "The Pits",
+      "biomeJa": "ザ・ピット",
       "biomeId": "65823-rebirth.mod",
       "profile": "the pits- rich but no food",
       "iron": 0.666667,
@@ -2756,6 +2826,7 @@
     },
     "10,160,255": {
       "biome": "Cheaters Run",
+      "biomeJa": "チーターズラン",
       "biomeId": "95536-rebirth.mod",
       "profile": "uninhabitable",
       "iron": 0.166667,
@@ -2796,6 +2867,7 @@
     },
     "190,50,10": {
       "biome": "High Bonefields",
+      "biomeJa": "ハイ・ボーンフィールド",
       "biomeId": "95538-rebirth.mod",
       "profile": "arid- borderlands, high canyons",
       "iron": 0.333333,
@@ -2834,6 +2906,7 @@
     },
     "175,190,10": {
       "biome": "Sniper Valley",
+      "biomeJa": "スナイパーバレー",
       "biomeId": "95758-rebirth.mod",
       "profile": "no food",
       "iron": 0.333333,
@@ -2874,6 +2947,7 @@
     },
     "130,94,94": {
       "biome": "Fishman Island",
+      "biomeJa": "フィッシュマン・アイランド",
       "biomeId": "96354-rebirth.mod",
       "profile": "coast wealthy",
       "iron": 0.333333,

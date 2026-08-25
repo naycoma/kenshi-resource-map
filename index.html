@@ -9,9 +9,12 @@
 </head>
 <body>
   <main id="map" aria-label="Kenshi resource probability map"></main>
-  <section class="panel">
+  <div id="controls-shell" class="controls-shell collapsed">
+  <section id="controls-panel" class="panel controls-panel">
     <h1>Kenshi Resource Map</h1>
-    <div class="controls" role="group" aria-label="ヒートマップ">
+    <fieldset class="heatmap-controls">
+      <legend>ヒートマップ</legend>
+      <div class="controls" role="group" aria-label="ヒートマップ">
       <button type="button" data-resource="iron">鉄</button>
       <button type="button" data-resource="copper">銅</button>
       <button type="button" data-resource="stone">石</button>
@@ -22,7 +25,9 @@
       <button type="button" data-resource="green">牧草帯</button>
       <button type="button" data-resource="swamp">湿地帯</button>
       <button type="button" data-resource="none" class="active">地図のみ</button>
-    </div>
+      </div>
+      <div class="legend"><span>低</span><i></i><span>高</span></div>
+    </fieldset>
     <fieldset class="text-controls">
       <legend>エリア内テキスト</legend>
       <label><input type="checkbox" data-area-text="iron copper stone" checked>鉱脈（鉄・銅・石）</label>
@@ -33,9 +38,15 @@
     </fieldset>
     <label><input id="areas-toggle" type="checkbox" checked> エリア境界を表示</label>
     <label><input id="locations-toggle" type="checkbox" checked> 街・地点を表示</label>
-    <section id="status">データを読み込み中…</section>
-    <div class="legend"><span>低</span><i></i><span>高</span></div>
+    <label><input id="roads-toggle" type="checkbox" checked> 道を表示</label>
   </section>
+  <button id="controls-toggle" class="panel-toggle" type="button" aria-controls="controls-panel" aria-expanded="false" title="操作パネルを開く">操作</button>
+  </div>
+  <section id="status" class="panel detail-panel">地図をクリックすると詳細を表示します。</section>
+  <aside id="faction-legend" class="faction-legend" hidden>
+    <h2>勢力色</h2>
+    <div class="faction-legend-list"></div>
+  </aside>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
   <script src="app.js"></script>
 </body>
