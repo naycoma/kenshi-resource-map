@@ -47,6 +47,8 @@ const areaTextResources = new Set(
 );
 let config;
 let weatherDataPromise;
+let coordinateRequest = 0;
+const heightTileCache = new Map();
 const areaRenderer = L.canvas({ padding: 0.5 });
 const roadRenderer = L.canvas({ padding: 0.5, pane: 'roadPane' });
 
@@ -78,7 +80,10 @@ const areaPolygons = L.geoJSON(null, {
     layer.on('click', event => {
       if (!config) return;
       markSelectedPoint(event.latlng);
-      status.innerHTML = areaDetail(feature.properties, worldCoordinate(event.latlng));
+      const point = worldCoordinate(event.latlng);
+      const request = ++coordinateRequest;
+      status.innerHTML = areaDetail(feature.properties, point);
+      hydrateTerrainHeight(point, request);
       hydrateWeatherDetails(feature.properties);
     });
   }
@@ -142,6 +147,55 @@ function worldCoordinate(latlng) {
     x: config.world.min + (latlng.lng / mapSize) * span,
     z: config.world.min + (-latlng.lat / mapSize) * span
   };
+}
+
+function coordinateHtml(point) {
+  return `<div class="coordinate">X ${point.x.toFixed(0)} / Y <span class="coordinate-y">…</span> / Z ${point.z.toFixed(0)}</div>`;
+}
+
+function loadHeightTile(x, y) {
+  const key = `${x}/${y}`;
+  if (!heightTileCache.has(key)) {
+    if (heightTileCache.size >= 32) heightTileCache.delete(heightTileCache.keys().next().value);
+    heightTileCache.set(key, fetch(`tiles/height/5/${y}/${x}.png`)
+      .then(response => {
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        return response.blob();
+      })
+      .then(createImageBitmap)
+      .then(bitmap => {
+        const canvas = document.createElement('canvas');
+        canvas.width = canvas.height = 256;
+        canvas.getContext('2d', { willReadFrequently: true }).drawImage(bitmap, 0, 0);
+        bitmap.close();
+        return canvas;
+      }));
+  }
+  return heightTileCache.get(key);
+}
+
+async function terrainHeight(point) {
+  const span = config.world.max - config.world.min + 1;
+  const side = 256 * 2 ** 5;
+  const pixelX = Math.max(0, Math.min(side - 1, Math.floor((point.x - config.world.min) / span * side)));
+  const pixelY = Math.max(0, Math.min(side - 1, Math.floor((point.z - config.world.min) / span * side)));
+  const tileX = Math.floor(pixelX / 256);
+  const tileY = Math.floor(pixelY / 256);
+  const canvas = await loadHeightTile(tileX, tileY);
+  const [high, low] = canvas.getContext('2d').getImageData(pixelX % 256, pixelY % 256, 1, 1).data;
+  return ((high << 8) | low) * 0.15;
+}
+
+function hydrateTerrainHeight(point, request) {
+  terrainHeight(point).then(y => {
+    if (request !== coordinateRequest) return;
+    const output = status.querySelector('.coordinate-y');
+    if (output) output.textContent = y.toFixed(0);
+  }).catch(() => {
+    if (request !== coordinateRequest) return;
+    const output = status.querySelector('.coordinate-y');
+    if (output) output.textContent = '不明';
+  });
 }
 
 function mapPoint(x, z) {
@@ -326,7 +380,7 @@ function areaDetail(area, point) {
   const chips = specialChips(area);
   return `<article class="area-detail">
     <h2>${areaNameHtml(area)}</h2>
-    <div class="coordinate">X ${point.x.toFixed(0)} / Z ${point.z.toFixed(0)}</div>
+    ${coordinateHtml(point)}
     ${chipHtml(chips)}
     <div class="detail-tables">
       <table>
@@ -519,7 +573,9 @@ map.on('click', event => {
   if (!config) return;
   markSelectedPoint(event.latlng);
   const p = worldCoordinate(event.latlng);
-  status.textContent = `X ${p.x.toFixed(0)} / Z ${p.z.toFixed(0)}`;
+  const request = ++coordinateRequest;
+  status.innerHTML = coordinateHtml(p);
+  hydrateTerrainHeight(p, request);
 });
 
 document.querySelectorAll('[data-resource]').forEach(button => {
