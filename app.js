@@ -107,18 +107,19 @@ const areaLabels = L.geoJSON(null, {
       }).join('　');
       return group ? `${group}：${text}` : text;
     }).filter(Boolean);
-    const chips = specialChips(values);
+    const chips = areaTextVisible ? specialChips(values) : [];
+    const name = areaNamesVisible ? areaNameHtml(values) : '';
     return L.marker(latlng, {
       interactive: false,
       icon: L.divIcon({
         className: 'area-label-wrap',
-        html: `<span class="area-label">${areaNameHtml(values)}${lines.length ? `<small class="area-values">${lines.join('<br>')}</small>` : ''}${chipHtml(chips)}</span>`,
+        html: `<span class="area-label">${name}${areaTextVisible && lines.length ? `<small class="area-values">${lines.join('<br>')}</small>` : ''}${chipHtml(chips)}</span>`,
         iconSize: [180, 80], iconAnchor: [90, 40]
       })
     });
   }
 });
-const areas = L.layerGroup([areaBoundaries]).addTo(map);
+const boundaries = L.layerGroup([areaBoundaries]).addTo(map);
 map.setView([-mapSize / 2, mapSize / 2], 2);
 
 let locationsVisible = document.querySelector('#locations-toggle').checked;
@@ -127,7 +128,11 @@ let pendingLocations;
 let roadsVisible = document.querySelector('#roads-toggle').checked;
 let roadsPromise;
 let roadsLayer;
-let areasVisible = document.querySelector('#areas-toggle').checked;
+let boundariesVisible = document.querySelector('#areas-toggle').checked;
+let areaNamesVisible = document.querySelector('#area-names-toggle').checked;
+let areaTextVisible = document.querySelector('#area-text-toggle').checked;
+const areaTextOptions = document.querySelector('#area-text-options');
+areaTextOptions.disabled = !areaTextVisible;
 let areaGeoJson;
 const status = document.querySelector('#status');
 
@@ -362,10 +367,18 @@ const locationIconSourceSizes = {
   town: [86, 95], outpost: [53, 76], village: [40, 41], workcamp: [44, 36],
   ruin: [30, 42], smallplace: [27, 31], nest: [34, 31]
 };
-const locationIconScale = 0.75;
+const locationIconMaxScale = 0.75;
+const locationIconMaxScaleZoom = 2;
 
-function locationIcon(name, faction) {
-  const size = locationIconSourceSizes[name].map(value => Math.round(value * locationIconScale));
+function locationIconScale(zoom = map.getZoom()) {
+  return locationIconMaxScale / (2 ** (Math.max(0, locationIconMaxScaleZoom - zoom) / 2));
+}
+
+function locationIcon(name, faction, scale = locationIconScale()) {
+  const sourceSize = faction?.color
+    ? locationIconSourceSizes[name].map(value => value + 2)
+    : locationIconSourceSizes[name];
+  const size = sourceSize.map(value => Math.round(value * scale));
   const iconUrl = faction?.color
     ? `icons/map/factions/${name}-${faction.color.slice(1)}.png`
     : `icons/map/outlined/${name}.png`;
@@ -381,7 +394,16 @@ function locationIcon(name, faction) {
 
 function updateLocationVisibility() {
   const zoom = map.getZoom();
+  const iconScale = locationIconScale(zoom);
   for (const item of locationMarkers) {
+    if (item.iconScale !== iconScale) {
+      const icon = locationIcon(item.style, item.faction, iconScale);
+      item.marker.setIcon(icon);
+      item.marker.getTooltip().options.offset = item.isTown
+        ? L.point(0, icon.options.iconSize[1] / 2)
+        : L.point(0, 0);
+      item.iconScale = iconScale;
+    }
     const shouldShow = locationsVisible && zoom >= item.minZoom;
     if (shouldShow && !map.hasLayer(item.marker)) item.marker.addTo(map);
     if (!shouldShow && map.hasLayer(item.marker)) item.marker.remove();
@@ -422,8 +444,7 @@ async function updateRoadVisibility() {
 }
 
 function updateAreaLabelVisibility() {
-  if (!areasVisible) return;
-  if (map.getZoom() >= 2) {
+  if ((areaNamesVisible || areaTextVisible) && map.getZoom() >= 2) {
     if (!map.hasLayer(areaLabels)) areaLabels.addTo(map);
   } else {
     areaLabels.remove();
@@ -440,7 +461,8 @@ function addLocations(locations, factions) {
   locationMarkers = locations.map(location => {
     const [style, minZoom] = locationStyle(location.type);
     const faction = factions[location.factionId ?? ''];
-    const icon = locationIcon(style, faction);
+    const iconScale = locationIconScale();
+    const icon = locationIcon(style, faction, iconScale);
     const isTown = location.type === 'TOWN_TOWN';
     const displayName = location.nameJa || location.name;
     const marker = L.marker(mapPoint(location.x, location.z), {
@@ -452,7 +474,7 @@ function addLocations(locations, factions) {
       className: `location-tooltip${isTown ? ' town-label' : ''}`
     });
     marker.bindPopup(`<div class="location-popup"><strong>${locationNameHtml(location)}</strong>${factionChipHtml(faction)}<small class="location-type">${escapeHtml(location.type)}</small></div>`);
-    return { marker, minZoom };
+    return { marker, minZoom, style, faction, isTown, iconScale };
   });
   updateLocationVisibility();
 }
@@ -519,14 +541,18 @@ document.querySelectorAll('[data-area-text]').forEach(input => {
   });
 });
 document.querySelector('#areas-toggle').addEventListener('change', event => {
-  areasVisible = event.target.checked;
-  if (areasVisible) {
-    areas.addTo(map);
-    updateAreaLabelVisibility();
-  } else {
-    areas.remove();
-    areaLabels.remove();
-  }
+  boundariesVisible = event.target.checked;
+  if (boundariesVisible) boundaries.addTo(map);
+  else boundaries.remove();
+});
+document.querySelector('#area-names-toggle').addEventListener('change', event => {
+  areaNamesVisible = event.target.checked;
+  redrawAreaLabels();
+});
+document.querySelector('#area-text-toggle').addEventListener('change', event => {
+  areaTextVisible = event.target.checked;
+  areaTextOptions.disabled = !areaTextVisible;
+  redrawAreaLabels();
 });
 document.querySelector('#locations-toggle').addEventListener('change', event => {
   locationsVisible = event.target.checked;

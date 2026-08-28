@@ -28,15 +28,17 @@
       </div>
       <div class="legend"><span>低</span><i></i><span>高</span></div>
     </fieldset>
-    <fieldset class="text-controls">
-      <legend>エリア内テキスト</legend>
+    <label><input id="areas-toggle" type="checkbox" checked> エリア境界を表示</label>
+    <label><input id="area-names-toggle" type="checkbox" checked> エリア名を表示</label>
+    <label class="area-text-master"><input id="area-text-toggle" type="checkbox" checked> エリア詳細を表示</label>
+    <fieldset id="area-text-options" class="text-controls">
+      <legend>エリア詳細</legend>
       <label><input type="checkbox" data-area-text="iron copper stone" checked>鉱脈（鉄・銅・石）</label>
       <label><input type="checkbox" data-area-text="arid green swamp" checked>生育（乾燥・牧草・湿地）</label>
       <label><input type="checkbox" data-area-text="fertility" checked>肥沃度</label>
       <label><input type="checkbox" data-area-text="water" checked>水</label>
       <label><input type="checkbox" data-area-text="wind" checked>風速</label>
     </fieldset>
-    <label><input id="areas-toggle" type="checkbox" checked> エリア境界を表示</label>
     <label><input id="locations-toggle" type="checkbox" checked> 街・地点を表示</label>
     <label><input id="roads-toggle" type="checkbox" checked> 道を表示</label>
   </section>
